@@ -1,0 +1,54 @@
+# This is a sample build configuration for Java (Maven).
+# Check our guides at https://confluence.atlassian.com/x/zd-5Mw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: maven:3.6.1
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - maven
+        script: # Modify the commands below to build your repository.
+
+          - mvn clean install
+        #     - apt-get update
+        #    - apt-get install -y zip
+        #   - zip -r moviereview.zip .
+
+        artifacts:
+           - target/moviereview.zip
+
+
+
+    - step:
+        name: upload to S3
+        deployment: staging
+        script:
+          - pipe: atlassian/aws-code-deploy:0.4.1
+            variables:
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              COMMAND: 'upload'
+              APPLICATION_NAME: $APPLICATION_NAME
+              ZIP_FILE: 'target/moviereview.zip'
+              S3_BUCKET: $S3_BUCKET
+              VERSION_LABEL: 'moviereview-0.0.1'
+    - step:
+        name: Deploy to ec2
+        deployment: production
+        script:
+          - pipe: atlassian/aws-code-deploy:0.4.1
+            variables:
+              AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID
+              AWS_SECRET_ACCESS_KEY: $AWS_SECRET_ACCESS_KEY
+              AWS_DEFAULT_REGION: $AWS_DEFAULT_REGION
+              APPLICATION_NAME: $APPLICATION_NAME
+              DEPLOYMENT_GROUP: $DEPLOYMENT_GROUP
+              S3_BUCKET: $S3_BUCKET
+              COMMAND: 'deploy'
+              WAIT: 'true'
+              VERSION_LABEL: 'moviereview-0.0.1'
+              FILE_EXISTS_BEHEAVIOR: 'OVERWRITE'
