@@ -1,0 +1,5 @@
+com\swe699\userManagement\UserManagementApplication.class
+com\swe699\userManagement\UsersRepository.class
+com\swe699\userManagement\TheController.class
+com\swe699\userManagement\TheService.class
+com\swe699\userManagement\Users.class

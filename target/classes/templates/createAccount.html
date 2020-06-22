@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+
+<div class="container my-5">
+    <h3>Add User Information to create account</h3>
+    <div class="card">
+        <div class="card-body">
+            <form action="create" method="post">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="uName" class="col-form-label">User name</label>
+                        <input type="text" class="form-control" id="uName" name="uName" placeholder="Enter user name" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="email" class="col-form-label">User email</label>
+                        <input type="text" class="form-control"
+                               id="email" name="email" placeholder="Enter email Id" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="pass" class="col-form-label">User password</label>
+                        <input type="text" class="form-control"
+                               id="pass" name="pass" placeholder="Enter password" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value=" Submit ">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

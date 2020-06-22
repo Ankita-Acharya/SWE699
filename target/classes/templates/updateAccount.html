@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Account</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+<div class="container my-5">
+    <h3 th:text="${PassValue2}" th:id="${PassValue2}" th:name="${PassValue2}"></h3>
+    <div class="card">
+        <div class="card-body">
+            <form action="updateComplete" method="post">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        User Name :
+                        <p th:text="${PassValue}" th:id="${PassValue}" th:name="${PassValue}"></p>
+                        <input type="hidden" th:value="${PassValue}" th:name="PassValue" th:id="PassValue">
+
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="phone" class="col-form-label" >User phone</label>
+                        <input type="text" class="form-control"
+                               id="phone" name="phone" th:value="${valuess.phone}" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label  class="col-form-label">Plan Detail </label>
+                        <select for="planDetail" name="planDetail" class="btn btn-secondary">
+                            <option value="Basic" th:selected="${valuess.planDetail == 'Basic'}">Basic</option>
+                            <option value="Standard" th:selected="${valuess.planDetail == 'Standard'}">Standard</option>
+                            <option value="Premium" th:selected="${valuess.planDetail == 'Premium'}">Premium</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label class="col-form-label">Language </label>
+                        <select for="language" name="language" class="btn btn-secondary">
+                            <option value="English" th:selected="${valuess.language == 'English'}">English</option>
+                            <option value="Spanish" th:selected="${valuess.language == 'Spanish'}">Spanish</option>
+                            <option value="Korean" th:selected="${valuess.language == 'Korean'}">Korean</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value=" Continue ">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

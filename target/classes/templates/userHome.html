@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+<div class="container my-5">
+    <h3 text="${PassValue}"></h3>
+    <h3>To update your profile, click here:</h3>
+    <div class="card">
+        <div class="card-body">
+            <form action="update" method="post">
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value=" Take me to update ">
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+<h4><--------Can have other home page stuff here---------></h4>
+</body>
+</html>

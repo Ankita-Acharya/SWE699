@@ -1,0 +1,82 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2020-04-24T16:43:27.736Z",
+        "line": 2,
+        "name": "client makes a call to /getAll",
+        "description": "",
+        "id": "all-users-can-be-fetched;client-makes-a-call-to-/getall",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 734198600,
+              "status": "passed"
+            },
+            "line": 3,
+            "name": "client calls /getAll",
+            "match": {
+              "location": "com.swe699.userManagement.stepDef.client_calls_getAll()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "response is given",
+            "match": {
+              "location": "com.swe699.userManagement.stepDef.response_is_given()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2020-04-24T16:43:28.564Z",
+        "line": 6,
+        "name": "get user details",
+        "description": "",
+        "id": "all-users-can-be-fetched;get-user-details",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 93725800,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "api call to /getInfo",
+            "match": {
+              "location": "com.swe699.userManagement.stepDef.api_call_to_getInfo()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 15642500,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "return user detail",
+            "match": {
+              "location": "com.swe699.userManagement.stepDef.return_user_detail()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "all users can be fetched",
+    "description": "",
+    "id": "all-users-can-be-fetched",
+    "keyword": "Feature",
+    "uri": "file:src/main/resources/user.feature",
+    "tags": []
+  }
+]
