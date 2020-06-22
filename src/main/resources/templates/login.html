@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Log in</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+<body>
+<div class="container my-5">
+    <h4 th:text="${PassValue}" style="color: red"></h4>
+    <h3>Log in here</h3>
+    <div class="card">
+        <div class="card-body">
+            <form action="loginUser" method="post">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="loginID" class="col-form-label">User name</label>
+                        <input type="text" class="form-control" id="loginID" name="loginID" placeholder="Enter user name" />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="loginpass" class="col-form-label">User password</label>
+                        <input type="text" class="form-control"
+                               id="loginpass" name="loginpass" placeholder="Enter password" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value=" Submit ">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
